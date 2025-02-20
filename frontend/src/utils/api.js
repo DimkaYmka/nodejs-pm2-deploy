@@ -139,6 +139,6 @@ class Api {
   }
   }
   // Замените на адрес вашего бэкенда
-  const api = new Api('http://api.mesto-ff.nomorepartiesco.ru/');
+  const api = new Api('http://api.mesto-ff.nomorepartiesco.ru');
 
   export default api;
