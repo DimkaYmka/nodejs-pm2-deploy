@@ -2,5 +2,23 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7"
-  }
+  },
+  "name": "nodejs-pm2-deploy",
+  "version": "1.0.0",
+  "description": "Стартеркит проекта по автоматизации деплоя фронтенда и бэкенда при помощи pm2 (pm2 deploy)",
+  "main": "ecosystem.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DimkaYmka/nodejs-pm2-deploy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DimkaYmka/nodejs-pm2-deploy/issues"
+  },
+  "homepage": "https://github.com/DimkaYmka/nodejs-pm2-deploy#readme"
 }
