@@ -21,7 +21,7 @@ module.exports = {
       ref: 'origin/master',
       repo: process.env.REPO_URL,
       path: process.env.DEPLOY_PATH,
-      'pre-deploy-local': `scp backend/.env ${process.env.SERVER_ADDRESS}:${process.env.DEPLOY_PATH}/backend/.env`,
+      'pre-deploy-local': `ssh ${process.env.SERVER_ADDRESS} "mkdir -p ${process.env.DEPLOY_PATH}/backend" && scp backend/.env ${process.env.SERVER_ADDRESS}:${process.env.DEPLOY_PATH}/backend/.env`,
       'post-deploy': [
         'cd frontend && npm install && npm run build',
         'cd backend && npm install && npm run build',
