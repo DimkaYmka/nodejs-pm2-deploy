@@ -15,7 +15,7 @@ mongoose.connect(DB_ADDRESS);
 
 // Только для локальных тестов. Не используйте это в продакшене
 app.use(cors({
-  origin: 'http://mesto-ff.nomorepartiesco.ru', // Разрешаем запросы только с этого домена
+  origin: 'https://mesto-ff.nomorepartiesco.ru', // Разрешаем запросы только с этого домена
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], // Разрешенные методы
   allowedHeaders: ['Content-Type', 'Authorization'], // Разрешенные заголовки
   credentials: true, // Если используете куки или авторизацию
