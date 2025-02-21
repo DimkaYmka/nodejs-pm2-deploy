@@ -19,7 +19,7 @@ module.exports = {
     production: {
       user: process.env.USERNAME,
       host: process.env.SERVER_ADDRESS.split('@')[1],
-      ref: 'origin/main',
+      ref: 'origin/master',
       repo: process.env.REPO_URL,
       path: process.env.DEPLOY_PATH,
       'pre-deploy-local': 'scp backend/.env ${SERVER_ADDRESS}:${DEPLOY_PATH}/backend/.env',
