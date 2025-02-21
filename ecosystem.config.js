@@ -4,16 +4,15 @@ module.exports = {
   apps: [
     {
       name: 'api',
-      script: 'backend/dist/index.js', // Путь к собранному файлу бэкенда
-      cwd: './backend',                // Рабочая директория для бэкенда
+      script: 'backend/dist/index.js',
+      cwd: './backend',
       instances: 1,
       autorestart: true,
       watch: false,
-      env: {
+      env_production: {
         NODE_ENV: 'production',
       },
     },
-    // Фронтенд не требует процесса в PM2, так как обслуживается Nginx
   ],
   deploy: {
     production: {
@@ -22,11 +21,11 @@ module.exports = {
       ref: 'origin/master',
       repo: process.env.REPO_URL,
       path: process.env.DEPLOY_PATH,
-      'pre-deploy-local': 'scp backend/.env ${SERVER_ADDRESS}:${DEPLOY_PATH}/backend/.env',
+      'pre-deploy-local': `scp backend/.env ${process.env.SERVER_ADDRESS}:${process.env.DEPLOY_PATH}/backend/.env`,
       'post-deploy': [
-        'cd frontend && npm install && npm run build', // Сборка фронтенда
-        'cd backend && npm install && npm run build',  // Сборка бэкенда (если нужна)
-        'pm2 reload ecosystem.config.json --env production', // Перезапуск бэкенда
+        'cd frontend && npm install && npm run build',
+        'cd backend && npm install && npm run build',
+        'pm2 reload ecosystem.config.js --update-env',
       ].join(' && '),
     },
   },
