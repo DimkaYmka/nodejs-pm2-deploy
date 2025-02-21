@@ -22,7 +22,7 @@ mongoose.connect(DB_ADDRESS);
 // }));
 
 app.use(cors({
-  origin: 'https://mesto-ff.nomorepartiesco.ru', // Разрешаем запросы только с этого домена
+  origin: 'https://mesto-ff.nomorepartiesco.ru/', // Разрешаем запросы только с этого домена
   methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'], // Разрешенные методы
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept', 'Origin', 'X-Custom-Header'], // Разрешенные заголовки
   credentials: true, // Если используете куки или авторизацию
